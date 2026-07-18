@@ -8,6 +8,10 @@ export function IntroSequence() {
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
     
     // Check for reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,7 +61,7 @@ export function IntroSequence() {
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [isClient]);
 
   if (!isClient) return null;
 
