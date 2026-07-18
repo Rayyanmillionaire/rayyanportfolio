@@ -6,16 +6,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const experienceData = [
   {
-    title: "Full Stack Web Development Intern",
-    company: "Portfolio Builders",
-    duration: "June 2026 – June 28, 2026",
-    description: "Built a responsive careers portal with React, reusable UI components, and performance optimizations. Engineered premium UI components with a strong focus on accessibility and modern design."
-  },
-  {
     title: "Founder & Full-Stack Developer",
     company: "Xaurenite",
     duration: "2026 – Present",
     description: "Developed multiple business websites, digital products, and AI-assisted workflows. Focused on maintainable, production-ready code, clean architecture, and exploring AI integrations."
+  },
+  {
+    title: "Full Stack Web Development Intern",
+    company: "Portfolio Builders",
+    duration: "June 2026 – June 28, 2026 · Fixed-term internship",
+    description: "Built a responsive careers portal with React, reusable UI components, and performance optimizations. Engineered premium UI components with a strong focus on accessibility and modern design."
   },
   {
     title: "Freelance UI/UX Designer & Web Developer",

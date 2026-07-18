@@ -33,18 +33,57 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://rayyan-portfolio-ry.vercel.app/#person",
+        "name": "Rayyan Ahammed",
+        "jobTitle": "Software Engineer",
+        "url": "https://rayyan-portfolio-ry.vercel.app/",
+        "sameAs": [
+          "https://github.com/Rayyanmillionaire",
+          "https://www.linkedin.com/in/rayyanahammed/"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "KMCT CEETM"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rayyan-portfolio-ry.vercel.app/#website",
+        "url": "https://rayyan-portfolio-ry.vercel.app/",
+        "name": "Rayyan Ahammed | Software Engineer",
+        "publisher": {
+          "@id": "https://rayyan-portfolio-ry.vercel.app/#person"
+        }
+      }
+    ]
+  };
+
   return (
     <html
       lang="en"
       className={`dark ${geist.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
         <EasterEgg />
         <CommandPalette />
         {children}
+        {modal}
       </body>
     </html>
   );
