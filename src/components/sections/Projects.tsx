@@ -67,7 +67,7 @@ export function Projects() {
             
             <motion.div layoutId={`card-inner-${project.id}`} className="relative h-full bg-[#111] rounded-[15px] overflow-hidden flex flex-col transform transition-transform duration-500 group-hover:-translate-y-1">
               <motion.div layoutId={`image-${project.id}`} className="relative h-48 w-full bg-[#1a1a1a] border-b border-white/5 overflow-hidden">
-                <Image src={project.image} alt={project.title} fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
               </motion.div>
               
               <div className="p-6 flex flex-col flex-grow">
@@ -120,7 +120,7 @@ export function Projects() {
                   </button>
 
                   <motion.div layoutId={`image-${selectedProject.id}`} className="relative h-64 md:h-96 w-full bg-[#1a1a1a] border-b border-white/5 overflow-hidden">
-                    <Image src={selectedProject.image} alt={selectedProject.title} fill className="object-cover" />
+                    <Image src={selectedProject.image} alt={selectedProject.title} fill sizes="(max-width: 1200px) 100vw, 1200px" className="object-cover" />
                   </motion.div>
 
                   <div className="p-8 md:p-12">
